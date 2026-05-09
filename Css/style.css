@@ -59,6 +59,48 @@ body {
     outline-offset: 3px;
 }
 
+.controles-cabecalho {
+    max-width: 1100px;
+    margin: 0 auto 12px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+}
+
+.botao-menu,
+.botao-tema {
+    padding: 8px 12px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background-color: #38bdf8;
+    color: #111827;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.botao-menu {
+    display: none;
+}
+
+.botao-menu:hover,
+.botao-menu:focus,
+.botao-tema:hover,
+.botao-tema:focus {
+    background-color: #f9fafb;
+    color: #111827;
+    transform: translateY(-2px);
+}
+
+.botao-menu:focus,
+.botao-tema:focus {
+    outline: 2px solid #f9fafb;
+    outline-offset: 3px;
+}
+
 /* Arquivo: sobre.html */
 .conteudo {
     width: min(1120px, calc(100% - 32px));
@@ -93,7 +135,8 @@ body {
 
 .texto-apresentacao .etiqueta,
 .texto-portfolio .etiqueta,
-.texto-formacao .etiqueta {
+.texto-formacao .etiqueta,
+.texto-contato .etiqueta {
     width: fit-content;
     margin-bottom: 10px;
     padding: 3px 7px;
@@ -564,6 +607,40 @@ body {
     gap: 18px;
 }
 
+.grade-linguagens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.grade-linguagens span {
+    min-width: 110px;
+    padding: 10px 14px;
+    border: 1px solid #dbeafe;
+    border-radius: 6px;
+    background-color: #f8fafc;
+    color: #0369a1;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.grade-idiomas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.grade-idiomas .cartao-estudo {
+    padding: 16px;
+}
+
+.grade-idiomas .cartao-estudo h3 {
+    margin-bottom: 0;
+    font-size: 17px;
+}
+
 .cartao-estudo {
     padding: 24px;
     box-shadow: none;
@@ -606,13 +683,346 @@ body {
     border-left: 5px solid #38bdf8;
 }
 
+/* Arquivo: contato.html */
+.pagina-contato {
+    padding: 48px 0 64px;
+}
+
+.apresentacao-contato {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 32px;
+    align-items: stretch;
+    margin-bottom: 32px;
+}
+
+.texto-contato,
+.cartao-contato,
+.secao-contato {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(17, 24, 39, 0.08);
+}
+
+.texto-contato {
+    padding: 40px;
+}
+
+.texto-contato h1 {
+    margin-bottom: 20px;
+    color: #111827;
+    font-size: 38px;
+    line-height: 1.15;
+}
+
+.texto-contato p,
+.cartao-contato li,
+.secao-contato p {
+    color: #4b5563;
+    font-size: 17px;
+}
+
+.texto-contato p + p {
+    margin-top: 14px;
+}
+
+.cartao-contato {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cartao-contato h2,
+.secao-contato h2 {
+    color: #111827;
+}
+
+.cartao-contato h2 {
+    margin-bottom: 14px;
+    font-size: 26px;
+}
+
+.cartao-contato ul {
+    padding-left: 20px;
+}
+
+.cartao-contato li + li {
+    margin-top: 8px;
+}
+
+.cartao-contato a {
+    color: #0369a1;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.cartao-contato a:hover,
+.cartao-contato a:focus {
+    color: #111827;
+    text-decoration: underline;
+}
+
+.cartao-contato a:focus {
+    outline: 2px solid #38bdf8;
+    outline-offset: 3px;
+}
+
+.secao-contato {
+    padding: 32px;
+}
+
+.secao-contato h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.formulario-contato {
+    display: grid;
+    gap: 18px;
+}
+
+.campo-formulario {
+    display: grid;
+    gap: 8px;
+}
+
+.campo-formulario label {
+    color: #111827;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.campo-formulario input,
+.campo-formulario textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #f8fafc;
+    color: #111827;
+    font: inherit;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo-formulario textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.campo-formulario input::placeholder,
+.campo-formulario textarea::placeholder {
+    color: #9ca3af;
+}
+
+.campo-formulario input:focus,
+.campo-formulario textarea:focus {
+    border-color: #38bdf8;
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.22);
+}
+
+.botao-formulario {
+    width: fit-content;
+    padding: 11px 18px;
+    border: 0;
+    border-radius: 6px;
+    background-color: #111827;
+    color: #f9fafb;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.botao-formulario:hover,
+.botao-formulario:focus {
+    background-color: #0369a1;
+    transform: translateY(-2px);
+}
+
+.botao-formulario:focus {
+    outline: 2px solid #38bdf8;
+    outline-offset: 3px;
+}
+
+.retorno-formulario {
+    min-height: 24px;
+    font-weight: 700;
+}
+
+.retorno-formulario.sucesso {
+    color: #047857;
+}
+
+.retorno-formulario.erro {
+    color: #b91c1c;
+}
+
+/* Tema escuro */
+body.tema-escuro {
+    background-color: #0f172a;
+    color: #e5e7eb;
+}
+
+body.tema-escuro .cabecalho {
+    background-color: #020617;
+    border-bottom-color: #0ea5e9;
+}
+
+body.tema-escuro .texto-apresentacao,
+body.tema-escuro .secao-sobre,
+body.tema-escuro .cartao-resumo,
+body.tema-escuro .cartao-conhecimento,
+body.tema-escuro .texto-portfolio,
+body.tema-escuro .cartao-portfolio,
+body.tema-escuro .secao-portfolio,
+body.tema-escuro .cartao-projeto,
+body.tema-escuro .texto-formacao,
+body.tema-escuro .cartao-formacao,
+body.tema-escuro .secao-formacao,
+body.tema-escuro .cartao-estudo,
+body.tema-escuro .cartao-curso,
+body.tema-escuro .item-formacao,
+body.tema-escuro .texto-contato,
+body.tema-escuro .cartao-contato,
+body.tema-escuro .secao-contato {
+    background-color: #111827;
+    border-color: #1f2937;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+body.tema-escuro h1,
+body.tema-escuro h2 {
+    color: #f9fafb;
+}
+
+body.tema-escuro .texto-apresentacao p,
+body.tema-escuro .secao-sobre p,
+body.tema-escuro .cartao-conhecimento p,
+body.tema-escuro .cartao-resumo p,
+body.tema-escuro .cartao-resumo li,
+body.tema-escuro .objetivos-sobre li,
+body.tema-escuro .texto-portfolio p,
+body.tema-escuro .cartao-portfolio li,
+body.tema-escuro .secao-portfolio p,
+body.tema-escuro .cartao-projeto p,
+body.tema-escuro .texto-formacao p,
+body.tema-escuro .cartao-formacao li,
+body.tema-escuro .secao-formacao p,
+body.tema-escuro .cartao-estudo p,
+body.tema-escuro .cartao-curso p,
+body.tema-escuro .item-formacao p,
+body.tema-escuro .objetivos-formacao li,
+body.tema-escuro .texto-contato p,
+body.tema-escuro .cartao-contato li,
+body.tema-escuro .secao-contato p {
+    color: #d1d5db;
+}
+
+body.tema-escuro .cartao-conhecimento h3,
+body.tema-escuro .cartao-projeto h3,
+body.tema-escuro .item-formacao h3,
+body.tema-escuro .cartao-estudo h3,
+body.tema-escuro .cartao-curso h3,
+body.tema-escuro .links-repositorios span,
+body.tema-escuro .cartao-contato a {
+    color: #38bdf8;
+}
+
+body.tema-escuro .texto-apresentacao .etiqueta,
+body.tema-escuro .texto-portfolio .etiqueta,
+body.tema-escuro .texto-formacao .etiqueta,
+body.tema-escuro .texto-contato .etiqueta,
+body.tema-escuro .cartao-projeto .status-projeto,
+body.tema-escuro .item-formacao .periodo-formacao,
+body.tema-escuro .cartao-curso .status-curso {
+    background-color: rgba(14, 165, 233, 0.18);
+    color: #7dd3fc;
+}
+
+body.tema-escuro .item-formacao .instituicao-formacao,
+body.tema-escuro .cartao-curso .instituicao-curso {
+    background-color: #1f2937;
+    color: #e5e7eb;
+}
+
+body.tema-escuro .links-profissionais a,
+body.tema-escuro .link-projeto,
+body.tema-escuro .botao-formulario {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
+body.tema-escuro .links-profissionais a:hover,
+body.tema-escuro .links-profissionais a:focus,
+body.tema-escuro .link-projeto:hover,
+body.tema-escuro .link-projeto:focus,
+body.tema-escuro .botao-formulario:hover,
+body.tema-escuro .botao-formulario:focus {
+    background-color: #7dd3fc;
+    color: #020617;
+}
+
+body.tema-escuro .links-repositorios a,
+body.tema-escuro .grade-linguagens span,
+body.tema-escuro .campo-formulario input,
+body.tema-escuro .campo-formulario textarea {
+    background-color: #0f172a;
+    border-color: #334155;
+    color: #f9fafb;
+}
+
+body.tema-escuro .links-repositorios small,
+body.tema-escuro .campo-formulario input::placeholder,
+body.tema-escuro .campo-formulario textarea::placeholder {
+    color: #9ca3af;
+}
+
+body.tema-escuro .links-repositorios a:hover,
+body.tema-escuro .links-repositorios a:focus,
+body.tema-escuro .campo-formulario input:focus,
+body.tema-escuro .campo-formulario textarea:focus {
+    background-color: #111827;
+    border-color: #38bdf8;
+}
+
+body.tema-escuro .campo-formulario label {
+    color: #f9fafb;
+}
+
+body.tema-escuro .retorno-formulario.sucesso {
+    color: #34d399;
+}
+
+body.tema-escuro .retorno-formulario.erro {
+    color: #fca5a5;
+}
+
 @media (max-width: 600px) {
     .cabecalho {
         padding: 14px 16px;
     }
 
+    .controles-cabecalho {
+        margin-bottom: 10px;
+        justify-content: space-between;
+    }
+
+    .botao-menu {
+        display: inline-flex;
+    }
+
     .navegacao {
         gap: 8px;
+    }
+
+    .navegacao.menu-fechado {
+        display: none;
     }
 
     .navegacao a {
@@ -626,16 +1036,19 @@ body {
 @media (max-width: 900px) {
     .pagina-sobre,
     .pagina-portfolio,
-    .pagina-formacao {
+    .pagina-formacao,
+    .pagina-contato {
         padding-top: 32px;
     }
 
     .apresentacao-sobre,
     .apresentacao-portfolio,
     .apresentacao-formacao,
+    .apresentacao-contato,
     .grade-conhecimentos,
     .grade-projetos,
     .grade-formacao,
+    .grade-idiomas,
     .grade-cursos {
         grid-template-columns: 1fr;
     }
@@ -649,12 +1062,15 @@ body {
     .texto-apresentacao,
     .texto-portfolio,
     .texto-formacao,
+    .texto-contato,
     .secao-sobre,
     .secao-portfolio,
     .secao-formacao,
+    .secao-contato,
     .cartao-resumo,
     .cartao-portfolio,
     .cartao-formacao,
+    .cartao-contato,
     .cartao-conhecimento,
     .cartao-projeto,
     .cartao-estudo,
@@ -665,31 +1081,40 @@ body {
 
     .texto-apresentacao h1,
     .texto-portfolio h1,
-    .texto-formacao h1 {
+    .texto-formacao h1,
+    .texto-contato h1 {
         font-size: 30px;
     }
 
     .secao-sobre h2,
     .secao-portfolio h2,
-    .secao-formacao h2 {
+    .secao-formacao h2,
+    .secao-contato h2 {
         font-size: 24px;
     }
 
     .texto-apresentacao p,
     .texto-portfolio p,
     .texto-formacao p,
+    .texto-contato p,
     .secao-sobre p,
     .secao-portfolio p,
     .secao-formacao p,
+    .secao-contato p,
     .cartao-conhecimento p,
     .cartao-resumo p,
     .cartao-portfolio li,
     .cartao-formacao li,
+    .cartao-contato li,
     .cartao-projeto p,
     .cartao-estudo p,
     .cartao-curso p,
     .item-formacao p,
     .objetivos-formacao li {
         font-size: 16px;
+    }
+
+    .botao-formulario {
+        width: 100%;
     }
 }

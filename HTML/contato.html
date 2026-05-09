@@ -3,17 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página sobre do portfólio pessoal.">
+    <meta name="description" content="Página de contato do portfólio pessoal.">
     <link rel="stylesheet" href="../Css/style.css">
+    <script src="../JavaScript/script.js" defer></script>
     <title>Contato | Meu Portfólio</title>
 </head>
 <body>
     <header class="cabecalho">
         <nav class="navegacao" aria-label="Navegação principal">
-            <a href="sobre.html">Sobre</a>
+            <a href="sobre.html">Sobre mim</a>
             <a href="formacao.html">Formação</a>
             <a href="portfolio.html">Portfólio</a>
             <a class="ativo" href="contato.html">Contato</a>
         </nav>
     </header>
+
+    <main class="conteudo pagina-contato">
+        <section class="apresentacao-contato">
+            <div class="texto-contato">
+                <p class="etiqueta">Contato</p>
+                <h1>Vamos conversar?</h1>
+                <p>
+                    Use o formulário para enviar uma mensagem sobre projetos, oportunidades, estudos ou qualquer assunto relacionado ao meu desenvolvimento profissional.
+                </p>
+                <p>
+                    Procuro responder com atenção e manter contato com pessoas interessadas em tecnologia, colaboração e aprendizado.
+                </p>
+            </div>
+
+            <aside class="cartao-contato" aria-label="Canais de contato">
+                <h2>Canais</h2>
+                <ul>
+                    <li><a href="https://github.com/WesleyRTw" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/wesley-heringer-124b1728b/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li>Resposta pelo formulário</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section class="secao-contato">
+            <h2>Envie uma mensagem</h2>
+
+            <form class="formulario-contato" id="formulario-contato" action="#" method="post">
+                <div class="campo-formulario">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="6" placeholder="Escreva sua mensagem" required></textarea>
+                </div>
+
+                <button class="botao-formulario" type="submit">Enviar mensagem</button>
+                <p class="retorno-formulario" id="retorno-formulario" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
 </body>
+</html>
